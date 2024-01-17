@@ -1,0 +1,914 @@
+{
+	"info": {
+		"_postman_id": "0c61ffc9-3e48-4ddf-a410-707670fab232",
+		"name": "pollution-report-prc-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25344467"
+	},
+	"item": [
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Get Contact By contactId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{correlationId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/contacts/1-LH18MH",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contacts",
+								"1-LH18MH"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Contact By contactId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{correlationId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/contacts/1-LH18MH",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contacts",
+										"1-LH18MH"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"contactId\": \"1-LH18MH\",\n    \"contactFirstName\": \"CA\",\n    \"contactLastName\": \"TA\",\n    \"contactEmail\": \"mule@mailinator.com\",\n    \"citizenPhone\": \"4165555888\",\n    \"citizenAlternatePhone\": \"6478885555\",\n    \"contactLicenseNumber\": \"748956113\",\n    \"licenseStatus\": \"valid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Contacts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{correlationId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/contacts?contactId=1-LH18MH&firstname=Julie&email=mule@mailinator.com",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "contactId",
+									"value": "1-LH18MH"
+								},
+								{
+									"key": "firstname",
+									"value": "Julie"
+								},
+								{
+									"key": "email",
+									"value": "mule@mailinator.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Contacts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{correlationId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/contacts?contactId=1-LH18MH&firstname=Julie&email=mule@mailinator.com",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contacts"
+									],
+									"query": [
+										{
+											"key": "contactId",
+											"value": "1-LH18MH"
+										},
+										{
+											"key": "firstname",
+											"value": "Julie"
+										},
+										{
+											"key": "email",
+											"value": "mule@mailinator.com"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"contactId\": \"1-LH18MH\",\n        \"contactFirstName\": \"CA\",\n        \"contactLastName\": \"TA\",\n        \"contactEmail\": \"mule@mailinator.com\",\n        \"citizenPhone\": \"4165555888\",\n        \"citizenAlternatePhone\": \"6478885555\",\n        \"contactLicenseNumber\": \"748956113\",\n        \"licenseStatus\": \"valid\"\n    },\n    {\n        \"contactId\": \"1-LH19MH\",\n        \"contactFirstName\": \"Julie\",\n        \"contactLastName\": \"Calford\",\n        \"contactEmail\": \"julie@mailinator.com\",\n        \"citizenPhone\": \"4100555888\",\n        \"citizenAlternatePhone\": \"6470005555\",\n        \"contactLicenseNumber\": \"748956113\",\n        \"licenseStatus\": \"valid\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Post Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"contactFirstName\": \"CA\",\r\n        \"contactLastName\": \"TA\",\r\n        \"contactEmail\": \"mule@mailinator.com\",\r\n        \"citizenPhone\": \"4165555888\",\r\n        \"citizenAlternatePhone\": \"6478885555\",\r\n        \"isRegisteredUser\": false\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/contacts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contacts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"contactFirstName\": \"CA\",\r\n        \"contactLastName\": \"TA\",\r\n        \"contactEmail\": \"mule@mailinator.com\",\r\n        \"citizenPhone\": \"4165555888\",\r\n        \"citizenAlternatePhone\": \"6478885555\",\r\n        \"isRegisteredUser\": false\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/contacts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contacts"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"contactId\": \"1-LH18MH\",\n        \"contactFirstName\": \"CA\",\n        \"contactLastName\": \"TA\",\n        \"contactEmail\": \"mule@mailinator.com\",\n        \"citizenPhone\": \"4165555888\",\n        \"citizenAlternatePhone\": \"6478885555\",\n        \"contactLicenseNumber\": \"748956113\",\n        \"licenseStatus\": \"valid\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Patch Contact By contactId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{correlationId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contactId\": \"1-LH18MH\",\r\n    \"contactFirstName\": \"CA\",\r\n    \"contactLastName\": \"TA\",\r\n    \"contactEmail\": \"mule@mailinator.com\",\r\n    \"citizenPhone\": \"4165555888\",\r\n    \"citizenAlternatePhone\": \"6478885555\",\r\n    \"isRegisteredUser\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/contacts/1-LH18MH",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contacts",
+								"1-LH18MH"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Patch Contact By contactId",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{correlationId}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contactId\": \"1-LH18MH\",\r\n    \"contactFirstName\": \"CA\",\r\n    \"contactLastName\": \"TA\",\r\n    \"contactEmail\": \"mule@mailinator.com\",\r\n    \"citizenPhone\": \"4165555888\",\r\n    \"citizenAlternatePhone\": \"6478885555\",\r\n    \"isRegisteredUser\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/contacts/1-LH18MH",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contacts",
+										"1-LH18MH"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"contactId\": \"1-LH18MH\",\n    \"contactFirstName\": \"CA\",\n    \"contactLastName\": \"TA\",\n    \"contactEmail\": \"mule@mailinator.com\",\n    \"citizenPhone\": \"4165555888\",\n    \"citizenAlternatePhone\": \"6478885555\",\n    \"contactLicenseNumber\": \"748956113\",\n    \"licenseStatus\": \"valid\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Call Report",
+			"item": [
+				{
+					"name": "Post Call Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contact\": {\r\n        \"contactFirstName\": \"CA\",\r\n        \"contactLastName\": \"TA\",\r\n        \"contactEmail\": \"mule@mailinator.com\",\r\n        \"citizenPhone\": \"4165555888\",\r\n        \"citizenAlternatePhone\": \"6478885555\",\r\n        \"isRegisteredUser\": false\r\n    },\r\n    \"callReport\": {\r\n        \"referenceNumber\": \"MULESOFT0000000001\",\r\n        \"description\": \"PIR_20230215\",\r\n        \"reportMethod\": \"E-Submission\",\r\n        \"callReport\": \"SF Pollution Report\",\r\n        \"pollutionAddress\": \"this is pollution address\",\r\n        \"isDust\": true,\r\n        \"dustDescription\": \"this is dust description\",\r\n        \"isIllegalWasteDumping\": true,\r\n        \"illegalWasteDumpingDescription\": \"this is illegalWasteDumping description\",\r\n        \"isNoise\": true,\r\n        \"noiseDescription\": \"this is noise description\",\r\n        \"noiseFrequency\": \"Hourly\",\r\n        \"noiseDuration\": \"this is noise duration\",\r\n        \"noiseIntensity\": \"None\",\r\n        \"isOdour\": true,\r\n        \"odourDescription\": \"this is odour description\",\r\n        \"odourDuration\": \"this is odour duration\",\r\n        \"odourFrequency\": \"Daily\",\r\n        \"odourIntensity\": \"None\",\r\n        \"isOtherIssue\": true,\r\n        \"otherIssueDescription\": \"this is other issue description\",\r\n        \"isSmoke\": true,\r\n        \"smokeDescription\": \"this is smoke description\",\r\n        \"pollutionEffectDescription\": \"this is pollution effect description\",\r\n        \"pollutionSource\": \"this is pollution source\",\r\n        \"weatherConditionsDescription\": \"this is weather conditions description\",\r\n        \"windIntensity\": \"1 (Weak)\",\r\n        \"utilsServiceContactFirstName\": \"CA\",\r\n        \"utilsServiceContactLastName\": \"TA\",\r\n        \"utilsServiceContactEmail\": \"ca@mailinator.com\",\r\n        \"eventDateUTC\": \"05/26/2020 00:00:00\",\r\n        \"createdTime\": \"04/17/2020 15:52:09\",\r\n        \"integrationId\": \"5BNLCJ\",\r\n        \"portalId\": \"5BNLCJ\"\r\n    },\r\n    \"reportAttachment\": [\r\n        {\r\n            \"reportId\": \"1-AD56F\",\r\n            \"fileName\": \"sample image\",\r\n            \"fileExtension\": \"png\",\r\n            \"attachmentComment\": \"Inserting via Mule APIs\",\r\n            \"data\": \"SSBhbSBzYW1wbGUgZmlsZSBkYXRhIA==\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/call-reports",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"call-reports"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Call Report",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contact\": {\r\n        \"contactFirstName\": \"CA\",\r\n        \"contactLastName\": \"TA\",\r\n        \"contactEmail\": \"mule@mailinator.com\",\r\n        \"citizenPhone\": \"4165555888\",\r\n        \"citizenAlternatePhone\": \"6478885555\",\r\n        \"isRegisteredUser\": false\r\n    },\r\n    \"callReport\": {\r\n        \"referenceNumber\": \"MULESOFT0000000001\",\r\n        \"description\": \"PIR_20230215\",\r\n        \"reportMethod\": \"E-Submission\",\r\n        \"callReport\": \"SF Pollution Report\",\r\n        \"pollutionAddress\": \"this is pollution address\",\r\n        \"isDust\": true,\r\n        \"dustDescription\": \"this is dust description\",\r\n        \"isIllegalWasteDumping\": true,\r\n        \"illegalWasteDumpingDescription\": \"this is illegalWasteDumping description\",\r\n        \"isNoise\": true,\r\n        \"noiseDescription\": \"this is noise description\",\r\n        \"noiseFrequency\": \"Hourly\",\r\n        \"noiseDuration\": \"this is noise duration\",\r\n        \"noiseIntensity\": \"None\",\r\n        \"isOdour\": true,\r\n        \"odourDescription\": \"this is odour description\",\r\n        \"odourDuration\": \"this is odour duration\",\r\n        \"odourFrequency\": \"Daily\",\r\n        \"odourIntensity\": \"None\",\r\n        \"isOtherIssue\": true,\r\n        \"otherIssueDescription\": \"this is other issue description\",\r\n        \"isSmoke\": true,\r\n        \"smokeDescription\": \"this is smoke description\",\r\n        \"pollutionEffectDescription\": \"this is pollution effect description\",\r\n        \"pollutionSource\": \"this is pollution source\",\r\n        \"weatherConditionsDescription\": \"this is weather conditions description\",\r\n        \"windIntensity\": \"1 (Weak)\",\r\n        \"utilsServiceContactFirstName\": \"CA\",\r\n        \"utilsServiceContactLastName\": \"TA\",\r\n        \"utilsServiceContactEmail\": \"ca@mailinator.com\",\r\n        \"eventDateUTC\": \"05/26/2020 00:00:00\",\r\n        \"createdTime\": \"04/17/2020 15:52:09\",\r\n        \"integrationId\": \"5BNLCJ\",\r\n        \"portalId\": \"5BNLCJ\"\r\n    },\r\n    \"reportAttachment\": [\r\n        {\r\n            \"reportId\": \"1-AD56F\",\r\n            \"fileName\": \"sample image\",\r\n            \"fileExtension\": \"png\",\r\n            \"attachmentComment\": \"Inserting via Mule APIs\",\r\n            \"data\": \"SSBhbSBzYW1wbGUgZmlsZSBkYXRhIA==\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/call-reports",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"call-reports"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reportId\": \"1-5BNLCJ\",\n    \"referenceNumber\": \"MULESOFT0000000001\",\n    \"description\": \"PIR_20230215\",\n    \"reportMethod\": \"E-Submission\",\n    \"callReport\": \"SF Pollution Report\",\n    \"pollutionAddress\": \"this is pollution address\",\n    \"isDust\": true,\n    \"dustDescription\": \"this is dust description\",\n    \"isIllegalWasteDumping\": true,\n    \"illegalWasteDumpingDescription\": \"this is illegalWasteDumping description\",\n    \"isNoise\": true,\n    \"noiseDescription\": \"this is noise description\",\n    \"noiseFrequency\": \"Hourly\",\n    \"noiseDuration\": \"this is noise duration\",\n    \"noiseIntensity\": \"None\",\n    \"isOdour\": true,\n    \"odourDescription\": \"this is odour description\",\n    \"odourDuration\": \"this is odour duration\",\n    \"odourFrequency\": \"Daily\",\n    \"odourIntensity\": \"None\",\n    \"isOtherIssue\": true,\n    \"otherIssueDescription\": \"this is other issue description\",\n    \"isSmoke\": true,\n    \"smokeDescription\": \"this is smoke description\",\n    \"pollutionEffectDescription\": \"this is pollution effect description\",\n    \"pollutionSource\": \"this is pollution source\",\n    \"weatherConditionsDescription\": \"this is weather conditions description\",\n    \"windIntensity\": \"1 (Weak)\",\n    \"utilsServiceContactFirstName\": \"CA\",\n    \"utilsServiceContactLastName\": \"TA\",\n    \"utilsServiceContactEmail\": \"ca@mailinator.com\",\n    \"eventDateUTC\": \"05/26/2020 00:00:00\",\n    \"createdTime\": \"04/17/2020 15:52:09\",\n    \"integrationId\": \"5BNLCJ\",\n    \"portalId\": \"5BNLCJ\",\n    \"status\": \"Draft\",\n    \"reporterContactId\": \"this is reporter contact id\",\n    \"incidentId\": \"this is incident id\",\n    \"incidentStatus\": \"this is incident status\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Call Report by reportId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{correlationId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/call-reports/1-5BNLCJ",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"call-reports",
+								"1-5BNLCJ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Call Report by reportId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-correlation-id",
+										"value": "yuiuiujuj",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/call-reports/1-5BNLCJ",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"call-reports",
+										"1-5BNLCJ"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reportId\": \"1-5BNLCJ\",\n    \"referenceNumber\": \"MULESOFT0000000001\",\n    \"description\": \"PIR_20230215\",\n    \"reportMethod\": \"E-Submission\",\n    \"callReport\": \"SF Pollution Report\",\n    \"pollutionAddress\": \"this is pollution address\",\n    \"isDust\": true,\n    \"dustDescription\": \"this is dust description\",\n    \"isIllegalWasteDumping\": true,\n    \"illegalWasteDumpingDescription\": \"this is illegalWasteDumping description\",\n    \"isNoise\": true,\n    \"noiseDescription\": \"this is noise description\",\n    \"noiseFrequency\": \"Hourly\",\n    \"noiseDuration\": \"this is noise duration\",\n    \"noiseIntensity\": \"None\",\n    \"isOdour\": true,\n    \"odourDescription\": \"this is odour description\",\n    \"odourDuration\": \"this is odour duration\",\n    \"odourFrequency\": \"Daily\",\n    \"odourIntensity\": \"None\",\n    \"isOtherIssue\": true,\n    \"otherIssueDescription\": \"this is other issue description\",\n    \"isSmoke\": true,\n    \"smokeDescription\": \"this is smoke description\",\n    \"pollutionEffectDescription\": \"this is pollution effect description\",\n    \"pollutionSource\": \"this is pollution source\",\n    \"weatherConditionsDescription\": \"this is weather conditions description\",\n    \"windIntensity\": \"1 (Weak)\",\n    \"utilsServiceContactFirstName\": \"CA\",\n    \"utilsServiceContactLastName\": \"TA\",\n    \"utilsServiceContactEmail\": \"ca@mailinator.com\",\n    \"eventDateUTC\": \"05/26/2020 00:00:00\",\n    \"createdTime\": \"04/17/2020 15:52:09\",\n    \"integrationId\": \"5BNLCJ\",\n    \"portalId\": \"5BNLCJ\",\n    \"status\": \"Draft\",\n    \"reporterContactId\": \"this is reporter contact id\",\n    \"incidentId\": \"this is incident id\",\n    \"incidentStatus\": \"this is incident status\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Call Report by contactId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{correlationId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/contacts/1-LH18MU/call-reports",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contacts",
+								"1-LH18MU",
+								"call-reports"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Call Report by contactId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{correlationId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/contacts/1-LH18MU/call-reports",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contacts",
+										"1-LH18MU",
+										"call-reports"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reportId\": \"1-5BNLCJ\",\n        \"referenceNumber\": \"MULESOFT0000000001\",\n        \"description\": \"PIR_20230215\",\n        \"reportMethod\": \"E-Submission\",\n        \"callReport\": \"SF Pollution Report\",\n        \"pollutionAddress\": \"this is pollution address\",\n        \"isDust\": true,\n        \"dustDescription\": \"this is dust description\",\n        \"isIllegalWasteDumping\": true,\n        \"illegalWasteDumpingDescription\": \"this is illegalWasteDumping description\",\n        \"isNoise\": true,\n        \"noiseDescription\": \"this is noise description\",\n        \"noiseFrequency\": \"Hourly\",\n        \"noiseDuration\": \"this is noise duration\",\n        \"noiseIntensity\": \"None\",\n        \"isOdour\": true,\n        \"odourDescription\": \"this is odour description\",\n        \"odourDuration\": \"this is odour duration\",\n        \"odourFrequency\": \"Daily\",\n        \"odourIntensity\": \"None\",\n        \"isOtherIssue\": true,\n        \"otherIssueDescription\": \"this is other issue description\",\n        \"isSmoke\": true,\n        \"smokeDescription\": \"this is smoke description\",\n        \"pollutionEffectDescription\": \"this is pollution effect description\",\n        \"pollutionSource\": \"this is pollution source\",\n        \"weatherConditionsDescription\": \"this is weather conditions description\",\n        \"windIntensity\": \"1 (Weak)\",\n        \"utilsServiceContactFirstName\": \"CA\",\n        \"utilsServiceContactLastName\": \"TA\",\n        \"utilsServiceContactEmail\": \"ca@mailinator.com\",\n        \"eventDateUTC\": \"05/26/2020 00:00:00\",\n        \"createdTime\": \"04/17/2020 15:52:09\",\n        \"integrationId\": \"5BNLCJ\",\n        \"portalId\": \"5BNLCJ\",\n        \"status\": \"Draft\",\n        \"reporterContactId\": \"this is reporter contact id\",\n        \"incidentId\": \"this is incident id\",\n        \"incidentStatus\": \"this is incident status\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "License",
+			"item": [
+				{
+					"name": "Get License By contactId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/contacts/1-LH18MH/license",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contacts",
+								"1-LH18MH",
+								"license"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get License By contactId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/contacts/1-LH18MH/license",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contacts",
+										"1-LH18MH",
+										"license"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"licenseNumber\": \"789123456\",\n    \"licenseStatus\": \"valid\",\n    \"firstName\": \"John\",\n    \"lastName\": \"doe\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get License QR code By contactId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/contacts/1-LH18MH/license/qr-code",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contacts",
+								"1-LH18MH",
+								"license",
+								"qr-code"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get License QR code By contactId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/contacts/1-LH18MH/license/qr-code",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contacts",
+										"1-LH18MH",
+										"license",
+										"qr-code"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "\"iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAAB8klEQVR42u2au5GEMAyG5SEgpARKoTRTGqVQAiEBg04v412Wm7ngov3txHf2R6LRy7+W+C9ro4Y1rGENaxgvpGtkPjveRv2v55WynVJGxOzPcclJT8g2+SjVOzhMLCUXc/jNSTTIYTrEmMiYX9A0qz+p+dAxnikiq9uFZmQsIot5H1aSs508zp4D8Psxz73qSOFPtv2SogGwsmb1J/Ggs9vDgx6L+PdjVo8juQzrNHsxkowjbjUhYnKi5ccvwq3IaO1aADHNtlp+KLEm3ZmPXr99cCQULHN40GH+xLUKjZgYWSF2f9JipHZbfIPEtE/ZPbLYq5A8eaRdsVqdATG56CzbqqX8Xl+EdE/RMJhnFYms2saRf/QWWUjY6a3aVZMsE5/uT4gYR2TZtmTPOPkjAIGwy4NCNtGGlj4iCwa7qrM/ikMeiAqFiHlkabZ9lZO8Vk+IWMTSJBjVDp9Dd4TEilByxFOwj6buHllAmFfnaGGPKr0yJpY8954mm+jLR17DNrR4199QsFiLSoweWTa+4Zv0ioNdSqP5k70BS4Dd5SYQrAgC6SUTq9367UGch8B8fENUO/w6+ATGivnCbv4AYmDMlCMb35jm6rojJlZm4odNK0Jm0znfRxHHwErutfkEFWX6aaiBgbVfEDWsYQ1r2P9gP8SfSgkOrw2DAAAAAElFTkSuQmCC\""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health-check",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{client_secret}}",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "{{correlationId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/health-check",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{client_secret}}",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "{{correlationId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/ping",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

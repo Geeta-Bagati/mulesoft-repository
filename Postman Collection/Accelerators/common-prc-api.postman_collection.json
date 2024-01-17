@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "9731d56b-637e-4e9a-a93b-60c4b7260419",
+		"name": "common-prc-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25344467"
+	},
+	"item": [
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "upload file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appName\": \"test-23\",\r\n    \"appId\": \"a8b3C0000005hYAQAY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/files",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "upload file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{x-correlation-id}}",
+										"type": "text"
+									},
+									{
+										"key": "org_name",
+										"value": "grants",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"appName\": \"BLA-0010102023\",\r\n    \"appId\": \"0053C0000051bTuQAI\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/files",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"files"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:21:41 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"appId\": \"0053C0000051bTuQAI\",\n    \"appName\": \"BLA-0010102023\",\n    \"folderURL\": \"https://cloudsynapps.sharepoint.com/sites/Sharepoint1/Shared%20Documents/BLA-0010102023\",\n    \"comment\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "download file",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/files?fileId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files"
+							],
+							"query": [
+								{
+									"key": "fileId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve file information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/{fileId}/info",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"{fileId}",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job",
+			"item": [
+				{
+					"name": "create job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"jobId\": \"4\",\r\n        \"jTitle\": \"Tester\",\r\n        \"jDescription\": \"This is description\",\r\n        \"jLocation\": \"london\",\r\n        \"cName\": \"001Ho00001BqjPbIAJ\",\r\n        \"jType\": \"Contract\",\r\n        \"applicationDeadline\": \"2023-11-15\",\r\n        \"expLevel\": \"Entry Level\",\r\n        \"skillAndQual\": \"BE\",\r\n        \"jStatus\": \"Yes\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/job",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch job by jobId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/job/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update job by jobId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobId\": \"4\",\r\n    \"jTitle\": \"Tester\",\r\n    \"jDescription\": \"This is description\",\r\n    \"jLocation\": \"london\",\r\n    \"cName\": \"001Ho00001BqjPbIAJ\",\r\n    \"jType\": \"Contract\",\r\n    \"applicationDeadline\": \"2023-11-15\",\r\n    \"expLevel\": \"Entry Level\",\r\n    \"skillAndQual\": \"BE\",\r\n    \"jStatus\": \"Yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/job/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job Listing",
+			"item": [
+				{
+					"name": "create job listing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"jTitle\": \"Software Engineer\",\r\n        \"jDescription\": \"We are seeking a highly skilled software engineer to join our development team.\",\r\n        \"jLocation\": \"San Francisco CA\",\r\n        \"cName\": \"001Ho00001BqjPbIAJ\",\r\n        \"jType\": \"Full-time\",\r\n        \"salaryRange\": \"$80,000 - $100,000\",\r\n        \"applicationDeadline\": \"2023-11-30\",\r\n        \"expLevel\": \"Entry Level\",\r\n        \"skillAndQual\": \"Bachelors degree in Computer Science\",\r\n        \"jStatus\": \"Yes\",\r\n        \"createdDate\": \"2023-10-12\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/job-listings",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-listings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch job listing by jobId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "vocational",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/job-listings/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-listings",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "fetch job listing by jobId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "{{client_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "{{x-correlation-id}}",
+										"type": "text"
+									},
+									{
+										"key": "org_name",
+										"value": "vocational",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/job-listings/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"job-listings",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Oct 2023 11:30:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jobId\": 1,\n    \"jTitle\": \"Power-Bi/Tableau Developer\",\n    \"jDescription\": null,\n    \"jLocation\": null,\n    \"cName\": \"Microsoft\",\n    \"jType\": \"Full-time\",\n    \"salaryRange\": null,\n    \"applicationDeadline\": null,\n    \"expLevel\": null,\n    \"skillAndQual\": null,\n    \"jStatus\": \"Yes\",\n    \"createdDate\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "update job listing by jobId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jTitle\": \"Software Engineer\",\r\n    \"jDescription\": \"We are seeking a highly skilled software engineer to join our development team.\",\r\n    \"jLocation\": \"San Francisco CA\",\r\n    \"cName\": \"Tech Solutions Inc\",\r\n    \"jType\": \"Full-time\",\r\n    \"salaryRange\": \"$80,000 - $100,000\",\r\n    \"applicationDeadline\": \"2023-11-30\",\r\n    \"expLevel\": \"3-5 years\",\r\n    \"skillAndQual\": \"Bachelors degree in Computer Science\",\r\n    \"jStatus\": \"Open\",\r\n    \"createdDate\": \"2023-10-12\",\r\n    \"add1\": \"123 Main Street\",\r\n    \"add2\": \"Suite 456\",\r\n    \"add3\": \"Tech Park\",\r\n    \"add4\": \"San Francisco, CA 94101\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/job-listings/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job-listings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "folder",
+			"item": [
+				{
+					"name": "retrieve folder information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/{folderId}/info",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"{folderId}",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payments",
+			"item": [
+				{
+					"name": "get all payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/payments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2024-02-02",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "Scheduled",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							},
+							{
+								"key": "org_name",
+								"value": "grants",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"123da68fg7xbU\",\r\n    \"amount\": 4500.50,\r\n    \"scheduledDate\": \"2021-10-08\",\r\n    \"disbursementDate\": \"2021-10-08\",\r\n    \"type\": \"Interim\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/payments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health-check",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{client_secret}}",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "{{x-correlation-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/health-check",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{client_secret}}",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "{{x-correlation-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/ping",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

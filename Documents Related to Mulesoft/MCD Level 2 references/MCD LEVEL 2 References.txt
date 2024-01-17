@@ -1,0 +1,9 @@
+https://training.mulesoft.com/course/production-ready-development-practices-mule4
+
+https://training.mulesoft.com/course/production-ready-integrations-mule4
+
+data sheet
+https://training.mulesoft.com/oltpublish/cmsres/downloads/MCD_level2_datasheet.pdf
+
+exam
+https://training.mulesoft.com/certification/developer-mule4-level2/practice-exam

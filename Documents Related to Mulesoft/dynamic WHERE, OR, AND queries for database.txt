@@ -1,0 +1,42 @@
+Variable whereClause
+%dw 2.0
+output application/json
+var qp = attributes.queryParams
+---
+{     
+   ("id" : qp.id) if (!isBlank(qp.id  default "")) ,
+   ("firstName" : qp.firstName) if (!isBlank(qp.firstName  default "")),
+   ("lastName" : qp.lastName) if (!isBlank(qp.lastName  default "")),
+   ("email" : qp.email) if (!isBlank(qp.email  default "")),
+   ("jobTitle" : qp.jobTitle) if (!isBlank(qp.jobTitle  default ""))
+}
+
+
+Variable andQuery
+%dw 2.0
+output application/json
+var qp = attributes.queryParams
+
+var query = ("Select Id,firstName,lastName,email,jobTitle from employees where " ++
+(if(!isBlank(qp.id))("Id=:id" ++ if(sizeOf(qp)>1) " AND " else "" ) else "") ++ 
+(if(!isBlank(qp.firstName))("firstName=:firstName" ++ if(sizeOf(qp)>1) " AND " else "" ) else "") ++  
+(if(!isBlank(qp.lastName))("lastName=:lastName" ++ if(sizeOf(qp)>1) " AND " else "" ) else "") ++ 
+ (if(!isBlank(qp.email))("email=:email" ++ if(sizeOf(qp)>1) " AND " else "" ) else "") ++  
+ (if(!isBlank(qp.jobTitle))("jobTitle=:jobTitle" ++ if(sizeOf(qp)>1) " AND " else "" ) else ""))
+---
+if(sizeOf(qp)<1) "Select Id,firstName,lastName,email,jobTitle from employees" else if (query[-4 to -2] contains "AND") query[0 to -5] else query[0 to -1]
+
+variabse orQuery
+%dw 2.0
+output application/json
+var qp = attributes.queryParams
+
+var query = ("Select Id,firstName,lastName,email,jobTitle from employees where " ++
+(if(!isBlank(qp.id))("Id=:id" ++ if(sizeOf(qp)>1) " OR " else "" ) else "") ++ 
+(if(!isBlank(qp.firstName))("firstName=:firstName" ++ if(sizeOf(qp)>1) " OR " else "" ) else "") ++  
+(if(!isBlank(qp.lastName))("lastName=:lastName" ++ if(sizeOf(qp)>1) " OR " else "" ) else "") ++ 
+ (if(!isBlank(qp.email))("email=:email" ++ if(sizeOf(qp)>1) " OR " else "" ) else "") ++  
+ (if(!isBlank(qp.jobTitle))("jobTitle=:jobTitle" ++ if(sizeOf(qp)>1) " OR " else "" ) else ""))
+---
+if(sizeOf(qp)<1) "Select Id,firstName,lastName,email,jobTitle from employees" else if(query[-3 to -2] contains "OR") query[0 to -5] else query[0 to -1]
+

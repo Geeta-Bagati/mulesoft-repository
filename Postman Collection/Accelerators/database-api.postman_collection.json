@@ -1,0 +1,688 @@
+{
+	"info": {
+		"_postman_id": "1d5f44f0-6696-4d4a-9d29-96a25c0bcb20",
+		"name": "database-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25344467"
+	},
+	"item": [
+		{
+			"name": "getCustomer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "firstName",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "middelInitial",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "dateOfBirth",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getCustomer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "middelInitial",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "dateOfBirth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "597"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 07:33:31 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"DateOfBirth\": \"1985-05-10T00:00:00\",\n        \"FirstName\": \"John\",\n        \"CustomerId\": 1,\n        \"MiddelInitial\": \"A\",\n        \"LastName\": \"Doe\"\n    },\n    {\n        \"DateOfBirth\": \"1990-12-15T00:00:00\",\n        \"FirstName\": \"Jane\",\n        \"CustomerId\": 2,\n        \"MiddelInitial\": \"B\",\n        \"LastName\": \"Smith\"\n    },\n    {\n        \"DateOfBirth\": \"1988-09-25T00:00:00\",\n        \"FirstName\": \"Michael\",\n        \"CustomerId\": 3,\n        \"MiddelInitial\": \"C\",\n        \"LastName\": \"Johnson\"\n    },\n    {\n        \"DateOfBirth\": \"1995-04-02T00:00:00\",\n        \"FirstName\": \"Sarah\",\n        \"CustomerId\": 4,\n        \"MiddelInitial\": \"D\",\n        \"LastName\": \"Williams\"\n    }\n]"
+				},
+				{
+					"name": "getCustomer by customerId qp",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers?customerId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "2"
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "middelInitial",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "dateOfBirth",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 07:34:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"DateOfBirth\": \"1990-12-15T00:00:00\",\n        \"FirstName\": \"Jane\",\n        \"CustomerId\": 2,\n        \"MiddelInitial\": \"B\",\n        \"LastName\": \"Smith\"\n    }\n]"
+				},
+				{
+					"name": "getCustomer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers?firstName=Jane&lastName=Smith",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Jane"
+								},
+								{
+									"key": "middelInitial",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "Smith"
+								},
+								{
+									"key": "dateOfBirth",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 07:36:37 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"DateOfBirth\": \"1990-12-15T00:00:00\",\n        \"FirstName\": \"Jane\",\n        \"CustomerId\": 2,\n        \"MiddelInitial\": \"B\",\n        \"LastName\": \"Smith\"\n    }\n]"
+				},
+				{
+					"name": "getCustomer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "middelInitial",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "dateOfBirth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "745"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 07:44:26 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"DateOfBirth\": \"1985-05-10T00:00:00\",\n        \"FirstName\": \"John\",\n        \"CustomerId\": 1,\n        \"MiddelInitial\": \"A\",\n        \"LastName\": \"Doe\"\n    },\n    {\n        \"DateOfBirth\": \"1990-12-15T00:00:00\",\n        \"FirstName\": \"Jane\",\n        \"CustomerId\": 2,\n        \"MiddelInitial\": \"B\",\n        \"LastName\": \"Smith\"\n    },\n    {\n        \"DateOfBirth\": \"1988-09-25T00:00:00\",\n        \"FirstName\": \"Michael\",\n        \"CustomerId\": 3,\n        \"MiddelInitial\": \"C\",\n        \"LastName\": \"John\"\n    },\n    {\n        \"DateOfBirth\": \"1995-04-02T00:00:00\",\n        \"FirstName\": \"Sarah\",\n        \"CustomerId\": 4,\n        \"MiddelInitial\": \"D\",\n        \"LastName\": \"Williams\"\n    },\n    {\n        \"DateOfBirth\": \"1999-03-15T00:00:00\",\n        \"FirstName\": \"Tyler\",\n        \"CustomerId\": 5,\n        \"MiddelInitial\": \"B\",\n        \"LastName\": \"Lockwood\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getCustomerByCustomerId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/customers/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getCustomerByCustomerId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 07:37:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"DateOfBirth\": \"1988-09-25T00:00:00\",\n        \"FirstName\": \"Michael\",\n        \"CustomerId\": 3,\n        \"MiddelInitial\": \"C\",\n        \"LastName\": \"Johnson\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "deleteCustomerByCustomerId",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/customers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "deleteCustomerByCustomerId",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"2"
+							]
+						}
+					},
+					"status": "Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "351"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 09:27:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"QUERY_EXECUTION\",\n    \"description\": \"The DELETE statement conflicted with the REFERENCE constraint \\\"FK__Contact__Custome__5EBF139D\\\". The conflict occurred in database \\\"mydb\\\", table \\\"dbo.Contact\\\", column 'CustomerId'.\",\n    \"dateTime\": \"2023-08-04T14:57:21Z\",\n    \"transactionId\": \"a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateCustomerByCustomerId",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"3\",\r\n    \"firstName\": \"Michael\",\r\n    \"middelInitial\": \"C\",\r\n    \"lastName\": \"John\",\r\n    \"dateOfBirth\": \"1988-09-25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/customers/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updateCustomerByCustomerId",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": \"3\",\r\n    \"firstName\": \"Michael\",\r\n    \"middelInitial\": \"C\",\r\n    \"lastName\": \"John\",\r\n    \"dateOfBirth\": \"1988-09-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 07:41:14 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Updated Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "postCustomer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Tyler\",\r\n    \"middelInitial\": \"B\",\r\n    \"lastName\": \"Lockwood\",\r\n    \"dateOfBirth\": \"1999-03-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "postCustomer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264:",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Tyler\",\r\n    \"middelInitial\": \"B\",\r\n    \"lastName\": \"Lockwood\",\r\n    \"dateOfBirth\": \"1999-03-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 07:43:54 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Inserted Successfully\"\n}"
+				}
+			]
+		}
+	]
+}

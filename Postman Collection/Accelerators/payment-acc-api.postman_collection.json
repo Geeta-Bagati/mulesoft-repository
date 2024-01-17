@@ -1,0 +1,1438 @@
+{
+	"info": {
+		"_postman_id": "398da067-3421-489a-941d-e004a65d0578",
+		"name": "payment-acc-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25344467"
+	},
+	"item": [
+		{
+			"name": "ACH PAYMENTS",
+			"item": [
+				{
+					"name": "Create Credit Transfers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"secCode\": \"PPD\",\r\n    \"entryDescription\": \"PAYROLL\",\r\n    \"requestedExecutionDate\": \"2023-09-06\",\r\n    \"debtor\": {\r\n        \"achCompanyId\": \"ACHCOID123\",\r\n        \"address\": {\r\n            \"addressLine1\": \"The first line of address.\",\r\n            \"addressLine2\": \"The second line of address.\",\r\n            \"city\": \"The city\",\r\n            \"state\": \"CA\",\r\n            \"postalCode\": \"The ZIP code\",\r\n            \"countryCode\": \"US\"\r\n        }\r\n    },\r\n    \"creditTransfer\": {\r\n        \"isPrenote\": false,\r\n        \"payment\": {\r\n            \"amount\": \"1370.05\",\r\n            \"currency\": \"USD\"\r\n        },\r\n        \"creditor\": {\r\n            \"name\": \"Joe Creditor\",\r\n            \"bankAccount\": {\r\n                \"accountType\": \"CHECKING\",\r\n                \"currency\": \"USD\",\r\n                \"countryCode\": \"US\",\r\n                \"accountNumberType\": \"OTHER\",\r\n                \"accountNumber\": \"3467487657\",\r\n                \"routingNumberType\": \"USABA\",\r\n                \"routingNumber\": \"19000091\"\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/ach-payments/credit-transfers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ach-payments",
+								"credit-transfers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Credit Transfers",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"secCode\": \"PPD\",\r\n    \"entryDescription\": \"PAYROLL\",\r\n    \"requestedExecutionDate\": \"2022-03-22\",\r\n    \"debtor\": {\r\n        \"achCompanyId\": \"ACHCOID123\",\r\n        \"address\": {\r\n            \"addressLine1\": \"The first line of address.\",\r\n            \"addressLine2\": \"The second line of address.\",\r\n            \"city\": \"The city\",\r\n            \"state\": \"CA\",\r\n            \"postalCode\": \"The ZIP code\",\r\n            \"countryCode\": \"US\"\r\n        }\r\n    },\r\n    \"creditTransfer\": {\r\n        \"isPrenote\": false,\r\n        \"payment\": {\r\n            \"amount\": \"1370.05\",\r\n            \"currency\": \"USD\"\r\n        },\r\n        \"creditor\": {\r\n            \"name\": \"Joe Creditor\",\r\n            \"bankAccount\": {\r\n                \"accountType\": \"CHECKING\",\r\n                \"currency\": \"USD\",\r\n                \"countryCode\": \"US\",\r\n                \"accountNumberType\": \"OTHER\",\r\n                \"accountNumber\": \"3467487657\",\r\n                \"routingNumberType\": \"USABA\",\r\n                \"routingNumber\": \"19000091\"\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/ach-payments/credit-transfers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"ach-payments",
+										"credit-transfers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 05:21:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paymentId\": \"ACHAP03756\",\n    \"status\": \"SUBMITTED\",\n    \"statusAsOf\": \"2023-08-25T05:21:58.850\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Direct Debits",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"secCode\": \"PPD\",\r\n    \"entryDescription\": \"PAYROLL\",\r\n    \"requestedExecutionDate\": \"2023-09-06\",\r\n    \"creditor\": {\r\n        \"achCompanyId\": \"ACHCOID123\",\r\n        \"name\": \"Debtor Company\",\r\n        \"address\": {\r\n            \"addressLine1\": \"The first line of address.\",\r\n            \"addressLine2\": \"The second line of address.\",\r\n            \"city\": \"The city\",\r\n            \"state\": \"CA\",\r\n            \"postalCode\": \"The ZIP code\",\r\n            \"countryCode\": \"US\"\r\n        }\r\n    },\r\n    \"directDebit\": {\r\n        \"endToEndId\": \"1234567\",\r\n        \"traceNumber\": \"190000911234567\",\r\n        \"isPrenote\": false,\r\n        \"discretionaryData\": \"R\",\r\n        \"payment\": {\r\n            \"amount\": \"1370.05\",\r\n            \"currency\": \"USD\"\r\n        },\r\n        \"debtor\": {\r\n            \"name\": \"Joe Creditor\",\r\n            \"address\": {\r\n                \"addressLine1\": \"The first line of address.\",\r\n                \"addressLine2\": \"The second line of address.\",\r\n                \"city\": \"The city\",\r\n                \"state\": \"CA\",\r\n                \"postalCode\": \"The ZIP code\",\r\n                \"countryCode\": \"US\"\r\n            },\r\n            \"bankAccount\": {\r\n                \"accountType\": \"CHECKING\",\r\n                \"currency\": \"USD\",\r\n                \"countryCode\": \"US\",\r\n                \"accountNumberType\": \"OTHER\",\r\n                \"accountNumber\": \"3467487657\",\r\n                \"routingNumberType\": \"USABA\",\r\n                \"routingNumber\": \"19000091\"\r\n            }\r\n        },\r\n        \"remittanceInformation\": {\r\n            \"unstructuredAddenda\": [\r\n                \"Just free-form text\"\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/ach-payments/direct-debits",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ach-payments",
+								"direct-debits"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Direct Debits - error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"secCode\": \"PPD\",\r\n    \"entryDescription\": \"PAYROLL\",\r\n    \"requestedExecutionDate\": \"2022-03-22\",\r\n    \"creditor\": {\r\n        \"achCompanyId\": \"ACHCOID123\",\r\n        \"name\": \"Debtor Company\",\r\n        \"address\": {\r\n            \"addressLine1\": \"The first line of address.\",\r\n            \"addressLine2\": \"The second line of address.\",\r\n            \"city\": \"The city\",\r\n            \"state\": \"CA\",\r\n            \"postalCode\": \"The ZIP code if in the U.S. or postal code if outside of the U.S.\",\r\n            \"countryCode\": \"US\"\r\n        }\r\n    },\r\n    \"directDebit\": {\r\n        \"endToEndId\": \"1234567\",\r\n        \"traceNumber\": \"190000911234567\",\r\n        \"isPrenote\": false,\r\n        \"discretionaryData\": \"R\",\r\n        \"payment\": {\r\n            \"amount\": \"1370.05\",\r\n            \"currency\": \"USD\"\r\n        },\r\n        \"debtor\": {\r\n            \"name\": \"Joe Creditor\",\r\n            \"address\": {\r\n                \"addressLine1\": \"The first line of address.\",\r\n                \"addressLine2\": \"The second line of address.\",\r\n                \"city\": \"The city\",\r\n                \"state\": \"CA\",\r\n                \"postalCode\": \"The ZIP code if in the U.S. or postal code if outside of the U.S.\",\r\n                \"countryCode\": \"US\"\r\n            },\r\n            \"bankAccount\": {\r\n                \"accountType\": \"CHECKING\",\r\n                \"currency\": \"USD\",\r\n                \"countryCode\": \"US\",\r\n                \"accountNumberType\": \"OTHER\",\r\n                \"accountNumber\": \"3467487657\",\r\n                \"routingNumberType\": \"USABA\",\r\n                \"routingNumber\": \"19000091\"\r\n            }\r\n        },\r\n        \"remittanceInformation\": {\r\n            \"unstructuredAddenda\": [\r\n                \"Just free-form text\"\r\n            ]\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/payments/direct-debits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										"direct-debits"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 24 Aug 2023 15:19:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"Bad Request\",\n    \"description\": \"'postal_code' cannot have more than 16 character(s).\",\n    \"dateTime\": \"2023-08-24T20:49:52Z\",\n    \"transactionId\": \"a54aee33-c6c6-4467-be25-efd1db7a8b76\"\n}"
+						},
+						{
+							"name": "Create Direct Debits",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"secCode\": \"PPD\",\r\n    \"entryDescription\": \"PAYROLL\",\r\n    \"requestedExecutionDate\": \"2022-03-22\",\r\n    \"creditor\": {\r\n        \"achCompanyId\": \"ACHCOID123\",\r\n        \"name\": \"Debtor Company\",\r\n        \"address\": {\r\n            \"addressLine1\": \"The first line of address.\",\r\n            \"addressLine2\": \"The second line of address.\",\r\n            \"city\": \"The city\",\r\n            \"state\": \"CA\",\r\n            \"postalCode\": \"The ZIP code\",\r\n            \"countryCode\": \"US\"\r\n        }\r\n    },\r\n    \"directDebit\": {\r\n        \"endToEndId\": \"1234567\",\r\n        \"traceNumber\": \"190000911234567\",\r\n        \"isPrenote\": false,\r\n        \"discretionaryData\": \"R\",\r\n        \"payment\": {\r\n            \"amount\": \"1370.05\",\r\n            \"currency\": \"USD\"\r\n        },\r\n        \"debtor\": {\r\n            \"name\": \"Joe Creditor\",\r\n            \"address\": {\r\n                \"addressLine1\": \"The first line of address.\",\r\n                \"addressLine2\": \"The second line of address.\",\r\n                \"city\": \"The city\",\r\n                \"state\": \"CA\",\r\n                \"postalCode\": \"The ZIP code\",\r\n                \"countryCode\": \"US\"\r\n            },\r\n            \"bankAccount\": {\r\n                \"accountType\": \"CHECKING\",\r\n                \"currency\": \"USD\",\r\n                \"countryCode\": \"US\",\r\n                \"accountNumberType\": \"OTHER\",\r\n                \"accountNumber\": \"3467487657\",\r\n                \"routingNumberType\": \"USABA\",\r\n                \"routingNumber\": \"19000091\"\r\n            }\r\n        },\r\n        \"remittanceInformation\": {\r\n            \"unstructuredAddenda\": [\r\n                \"Just free-form text\"\r\n            ]\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/ach-payments/direct-debits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"ach-payments",
+										"direct-debits"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 05:22:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paymentId\": \"ACHAP00548\",\n    \"status\": \"SUBMITTED\",\n    \"statusAsOf\": \"2023-08-25T05:22:13.463\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Payments By Payment ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/ach-payments/ACHAP02953",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ach-payments",
+								"ACHAP02953"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Retrieve Payments By Payment ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/ach-payments/ACHAP02953",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"ach-payments",
+										"ACHAP02953"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "922"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 05:22:25 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paymentId\": \"ACHAP02953\",\n    \"status\": \"SENT\",\n    \"statusDatetime\": \"2022-03-22T19:13:46.374Z\",\n    \"transactionType\": \"DEBIT\",\n    \"achFileId\": \"7777788888\",\n    \"submittedDate\": \"2022-03-21\",\n    \"secCode\": \"PPD\",\n    \"entryDescription\": \"ELEC BILL\",\n    \"requestedExecutionDate\": \"2022-03-22\",\n    \"endToEndId\": \"1234567\",\n    \"traceNumber\": \"190000911234567\",\n    \"isPrenote\": false,\n    \"payment\": {\n        \"amount\": \"155.96\",\n        \"currency\": \"USD\"\n    },\n    \"debtor\": {\n        \"name\": \"JOE DEBTOR\",\n        \"bankAccount\": {\n            \"accountType\": \"SAVINGS\",\n            \"currency\": \"USD\",\n            \"countryCode\": \"US\",\n            \"accountNumberType\": \"OTHER\",\n            \"accountNumber\": \"3467487657\",\n            \"routingNumberType\": \"USABA\",\n            \"routingNumber\": \"104784646\"\n        }\n    },\n    \"creditor\": {\n        \"achCompanyId\": \"ACHCOID123\",\n        \"name\": \"CREDITOR COMPANY\"\n    },\n    \"remittanceInformation\": {\n        \"unstructuredAddenda\": [\n            \"JUST FREE-FORM TEXT\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "WIRE PAYMENTS",
+			"item": [
+				{
+					"name": "Create payment with CEO Wires template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"templateName\": \"Template_Wire\",\r\n    \"payment\": {\r\n        \"paymentType\": \"WIRE\",\r\n        \"paymentAmount\": 1,\r\n        \"paymentCurrency\": \"USD\",\r\n        \"valueDate\": \"2023-09-06\",\r\n        \"duplicateCheckFlag\": false,\r\n        \"information\": {\r\n            \"remittanceInformation\": \"\",\r\n            \"contractId\": \"\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/wire-payments/template",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wire-payments",
+								"template"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create payment with CEO Wires template",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"templateName\": \"Template_Wire\",\r\n    \"payment\": {\r\n        \"paymentType\": \"WIRE\",\r\n        \"paymentAmount\": 1,\r\n        \"paymentCurrency\": \"USD\",\r\n        \"valueDate\": \"2023-08-25\",\r\n        \"duplicateCheckFlag\": false,\r\n        \"information\": {\r\n            \"remittanceInformation\": \"\",\r\n            \"contractId\": \"\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/wire-payments/template",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"wire-payments",
+										"template"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "111"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 07:23:10 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paymentId\": \"DD4C34C1A11CDC32D4\",\n    \"status\": \"QUEUED\",\n    \"creationDatetime\": \"2023-08-25T07:23:10.523Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create freeform payment - Create a domestic wire",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment\": {\r\n        \"paymentType\": \"BOOK\",\r\n        \"valueDate\": \"2023-09-09\",\r\n        \"paymentAmount\": 10.84,\r\n        \"paymentCurrency\": \"USD\",\r\n        \"paymentIndicator\": \"CREDIT\",\r\n        \"creditCurrency\": \"USD\"\r\n    },\r\n    \"payee\": {},\r\n    \"payer\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/wire-payments/domestic-wire",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wire-payments",
+								"domestic-wire"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create freeform payment - Create a domestic wire",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payment\": {\r\n        \"paymentType\": \"DRAW\",\r\n        \"paymentDescription\": \"Any text describing the payment.\",\r\n        \"valueDate\": \"2023-08-31\",\r\n        \"paymentAmount\": 10.84,\r\n        \"paymentCurrency\": \"USD\",\r\n        \"paymentIndicator\": \"CREDIT\",\r\n        \"creditCurrency\": \"USD\",\r\n        \"debitCurrency\": \"USD\",\r\n        \"duplicateCheckFlag\": false,\r\n        \"userId\": \"CEO user name that initiated wire payment.\",\r\n        \"identifiers\": {\r\n            \"thirdPartyReferenceNumber\": \"AddtlRefData\",\r\n            \"customerReferenceNumber\": \"EndToEndId\"\r\n        },\r\n        \"foreignExchangeInformation\": {\r\n            \"contractId\": \"\"\r\n        },\r\n        \"information\": {\r\n            \"paymentPurposeDescription\": \"Urgent\",\r\n            \"doddFrankPaymentOriginatorType\": \"ORIGINAL_CUSTOMER\",\r\n            \"paymentHoldIndicator\": false,\r\n            \"instructionCodeForCreditorAgent\": \"\",\r\n            \"remittanceInformation\": \"\"\r\n        }\r\n    },\r\n    \"payee\": {\r\n        \"name\": \"WIUTCdtrNm1\",\r\n        \"shortName\": \"V\",\r\n        \"address\": {\r\n            \"addressLine1\": \"WIUTCdtrAdrL1\",\r\n            \"addressline2\": \"WIUTCdtrAdrL2\",\r\n            \"city\": \"US\",\r\n            \"countrySubdivisionName\": \"\",\r\n            \"postalCode\": \"88458\",\r\n            \"countryCode\": \"US\"\r\n        },\r\n        \"identification\": \"DBT4532100\",\r\n        \"contactInformation\": {\r\n            \"name\": \"\",\r\n            \"phone\": \"1111111111\",\r\n            \"emails\": \"\"\r\n        },\r\n        \"bankInformation\": {\r\n            \"bankAccountNumber\": \"XXXXX2100\",\r\n            \"internationalBankAccountNumber\": \"\",\r\n            \"accountTypeCode\": \"GL\",\r\n            \"institutionInformation\": {\r\n                \"name\": \"WIUTCdtrAgtNm1\",\r\n                \"bankIdentifierCode\": \"TDOMCATTXXX\",\r\n                \"unitedStatesClearingHouseInterbankPaymentSystemId\": \"\",\r\n                \"routingTransitNumber\": \"121000248\",\r\n                \"address\": {\r\n                    \"addressLine1\": \"WIUTCdtrAgtAdrL1\",\r\n                    \"addressLine2\": \"WIUTCdtrAgtAdrL2\",\r\n                    \"city\": \"TwnNm\",\r\n                    \"countrySubdivisionName\": \"\",\r\n                    \"postalCode\": \"88458\",\r\n                    \"countryCode\": \"US\"\r\n                }\r\n            }\r\n        }\r\n    },\r\n    \"payer\": {\r\n        \"name\": \"WIUTCdtrNm2\",\r\n        \"shortName\": \"\",\r\n        \"address\": {\r\n            \"addressLine1\": \"WIUTCdtrAdrL1\",\r\n            \"addressline2\": \"WIUTCdtrAdrL2\",\r\n            \"city\": \"US\",\r\n            \"countrySubdivisionName\": \"\",\r\n            \"postalCode\": \"88458\",\r\n            \"countryCode\": \"US\"\r\n        },\r\n        \"identification\": \"DBT4532100\",\r\n        \"contactInformation\": {\r\n            \"name\": \"\",\r\n            \"phone\": \"1111111111\",\r\n            \"emails\": []\r\n        },\r\n        \"bankInformation\": {\r\n            \"bankAccountNumber\": \"XXXXX2100\",\r\n            \"internationalBankAccountNumber\": \"\",\r\n            \"accountTypeCode\": \"GL\",\r\n            \"institutionInformation\": {\r\n                \"name\": \"WIUTCdtrAgtNm1\",\r\n                \"bankIdentifierCode\": \"TDOMCATTXXX\",\r\n                \"unitedStatesClearingHouseInterbankPaymentSystemId\": \"\",\r\n                \"routingTransitNumber\": \"121000248\",\r\n                \"address\": {\r\n                    \"addressLine1\": \"WIUTCdtrAgtAdrL1\",\r\n                    \"addressLine2\": \"WIUTCdtrAgtAdrL2\",\r\n                    \"city\": \"TwnNm\",\r\n                    \"countrySubdivisionName\": \"\",\r\n                    \"postalCode\": \"8848\",\r\n                    \"countryCode\": \"US\"\r\n                }\r\n            }\r\n        }\r\n    },\r\n    \"intermediaryBank\": {\r\n        \"name\": \"WIUTCdtrAgtNm1\",\r\n        \"bankIdentifierCode\": \"TDOMCATTXXX\",\r\n        \"unitedStatesClearingHouseInterbankPaymentSystemId\": \"\",\r\n        \"routingTransitNumber\": \"121000248\",\r\n        \"address\": {\r\n            \"addressLine1\": \"WIUTCdtrAgtAdrL1\",\r\n            \"addressLine2\": \"WIUTCdtrAgtAdrL2\",\r\n            \"city\": \"TwnNm\",\r\n            \"countrySubdivisionName\": \"\",\r\n            \"postalCode\": \"88458\",\r\n            \"countryCode\": \"US\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/wire-payments/domestic-wire",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"wire-payments",
+										"domestic-wire"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 08:41:51 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paymentId\": \"CORPUAT_394629\",\n    \"status\": \"AWAITING_APPROVAL\",\n    \"creationDatetime\": \"2023-08-25T08:41:50.945Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check wire status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/wire-payments/CORPUAT_394530?detail=yes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wire-payments",
+								"CORPUAT_394530"
+							],
+							"query": [
+								{
+									"key": "detail",
+									"value": "yes"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Check wire status - without qp",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/wire-payments/CORPUAT_394629",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"wire-payments",
+										"CORPUAT_394629"
+									],
+									"query": [
+										{
+											"key": "detail",
+											"value": "yes",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "713"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 10:59:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"payment\": {\n        \"paymentType\": \"DRAW\",\n        \"valueDate\": \"2018-02-14\",\n        \"paymentAmount\": 10,\n        \"paymentCurrency\": \"USD\",\n        \"paymentIndicator\": \"CREDIT\",\n        \"creditCurrency\": \"USD\",\n        \"duplicateCheckFlag\": false\n    },\n    \"paymentProcessingInformation\": {\n        \"status\": \"SUCCESSFUL\",\n        \"paymentId\": \"CORPUAT_394629\",\n        \"appId\": \"CEO_WIRES_APPROVAL\",\n        \"originatingApplicationId\": \"GTWAY\",\n        \"paymentOriginationMethod\": \"FREEFORM\",\n        \"cutOffTime\": \"2018-02-15T22:30:00.000Z\",\n        \"paymentAudit\": {\n            \"lastModifiedBy\": \"CORPUAT_SYS\",\n            \"lastModifiedTimestamp\": \"2018-02-09T12:21:17.869Z\",\n            \"createdBy\": \"CORPUAT_SYS\",\n            \"createdTimestamp\": \"2018-02-09T12:21:17.869Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Check wire status - detail = no",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/wire-payments/CORPUAT_394629?detail=no",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"wire-payments",
+										"CORPUAT_394629"
+									],
+									"query": [
+										{
+											"key": "detail",
+											"value": "no"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "713"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 11:01:05 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"payment\": {\n        \"paymentType\": \"DRAW\",\n        \"valueDate\": \"2018-02-14\",\n        \"paymentAmount\": 10,\n        \"paymentCurrency\": \"USD\",\n        \"paymentIndicator\": \"CREDIT\",\n        \"creditCurrency\": \"USD\",\n        \"duplicateCheckFlag\": false\n    },\n    \"paymentProcessingInformation\": {\n        \"status\": \"SUCCESSFUL\",\n        \"paymentId\": \"CORPUAT_394629\",\n        \"appId\": \"CEO_WIRES_APPROVAL\",\n        \"originatingApplicationId\": \"GTWAY\",\n        \"paymentOriginationMethod\": \"FREEFORM\",\n        \"cutOffTime\": \"2018-02-15T22:30:00.000Z\",\n        \"paymentAudit\": {\n            \"lastModifiedBy\": \"CORPUAT_SYS\",\n            \"lastModifiedTimestamp\": \"2018-02-09T12:21:17.869Z\",\n            \"createdBy\": \"CORPUAT_SYS\",\n            \"createdTimestamp\": \"2018-02-09T12:21:17.869Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Check wire status - detail = yes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/wire-payments/CORPUAT_394629?detail=yes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"wire-payments",
+										"CORPUAT_394629"
+									],
+									"query": [
+										{
+											"key": "detail",
+											"value": "yes"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3844"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 11:02:46 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"payment\": {\n        \"paymentType\": \"DRAW\",\n        \"valueDate\": \"2018-02-14\",\n        \"paymentAmount\": 10,\n        \"paymentCurrency\": \"USD\",\n        \"paymentIndicator\": \"CREDIT\",\n        \"creditCurrency\": \"USD\",\n        \"creditAmount\": 10,\n        \"debitAmount\": 10,\n        \"debitCurrency\": \"USD\",\n        \"duplicateCheckFlag\": false,\n        \"identifiers\": {\n            \"thirdPartyReferenceNumber\": \"3rd party ref\",\n            \"customerReferenceNumber\": \"cust ref\"\n        },\n        \"information\": {\n            \"feeAssigmentCode\": \"CREDIT\",\n            \"paymentPurposeDescription\": \"Paying for art supplies\",\n            \"doddFrankPaymentOriginatorType\": \"ORIGINAL_CUSTOMER\",\n            \"paymentHoldIndicator\": true,\n            \"remittanceInformation\": [\n                \"OBI1\",\n                \"OBI2\",\n                \"OBI3\",\n                \"OBI4\"\n            ]\n        }\n    },\n    \"payee\": {\n        \"name\": \"originatorName 20180208034109PM\",\n        \"shortName\": \"minak\",\n        \"address\": {\n            \"addressLine1\": \"originatorAdd1 20180208034202PM\",\n            \"addressLine2\": \"originatorAdd2 20180208034240PM\",\n            \"city\": \"Charlotte\",\n            \"countrySubdivisionName\": \"KY\",\n            \"postalCode\": \"566525\",\n            \"countryCode\": \"US\"\n        },\n        \"identification\": \"20570\",\n        \"bankInformation\": {\n            \"bankAccountNumber\": \"20570\",\n            \"accountTypeCode\": \"CASH\",\n            \"accountName\": \"originatorName 20180208034109PM\",\n            \"accountCurrency\": \"USD\",\n            \"institutionInformation\": {\n                \"name\": \"Payee Inst Info\",\n                \"routingTransitNumber\": \"091000019\",\n                \"address\": {\n                    \"addressLine1\": \"PAYEE ADDR1\",\n                    \"addressLine2\": \"PAYEE ADDR2\",\n                    \"city\": \"PECITY\",\n                    \"countrySubdivisionName\": \"PECSN\",\n                    \"postalCode\": \"54321\",\n                    \"countryCode\": \"US\"\n                }\n            }\n        }\n    },\n    \"payer\": {\n        \"name\": \"Payer Name\",\n        \"shortName\": \"PN\",\n        \"address\": {\n            \"addressLine1\": \"Payer Addr 1\",\n            \"addressLine2\": \"Payer Addr 1\",\n            \"city\": \"PRCITY\",\n            \"countrySubdivisionName\": \"PRCSN\",\n            \"postalCode\": \"67890\",\n            \"countryCode\": \"US\"\n        },\n        \"identification\": \"1234\",\n        \"contactInformation\": {\n            \"name\": \"PAYER CONTACT\",\n            \"phone\": \"8005551212\",\n            \"mobilePhone\": \"8005551212\",\n            \"emails\": [\n                \"payer@test.com\",\n                \"payer1@test.com\"\n            ]\n        },\n        \"bankInformation\": {\n            \"bankAccountNumber\": \"021000018\",\n            \"accountTypeCode\": \"CASH\",\n            \"accountName\": \"PN\",\n            \"accountCurrency\": \"USD\",\n            \"institutionInformation\": {\n                \"name\": \"THE BANK OF NEW YORK MELLON\",\n                \"routingTransitNumber\": \"021000018\",\n                \"address\": {\n                    \"addressLine1\": \"225 LIBERTY STREET\",\n                    \"addressLine2\": \"NEW YORK,NY,US\",\n                    \"city\": \"NEW YORK,NY\",\n                    \"postalCode\": \"10286\",\n                    \"countryCode\": \"US\"\n                }\n            }\n        }\n    },\n    \"ultimatePayee\": {\n        \"name\": \"originatorName 20180208034109PM\",\n        \"address\": {\n            \"addressLine1\": \"originatorAdd1 20180208034202PM\",\n            \"addressLine2\": \"originatorAdd2 20180208034240PM\",\n            \"city\": \"Charlotte\",\n            \"countrySubdivisionName\": \"KY\",\n            \"postalCode\": \"566525\",\n            \"countryCode\": \"US\"\n        },\n        \"identification\": \"123456\"\n    },\n    \"onBehalfOfBank\": {\n        \"name\": \"Int Bank.\",\n        \"address\": {\n            \"addressLine1\": \"string\",\n            \"addressLine2\": \"string\",\n            \"city\": \"string\",\n            \"countrySubdivisionName\": \"string\",\n            \"postalCode\": \"string\",\n            \"countryCode\": \"US\"\n        }\n    },\n    \"paymentProcessingInformation\": {\n        \"status\": \"SUCCESSFUL\",\n        \"paymentId\": \"CORPUAT_394629\",\n        \"appId\": \"CEO_WIRES_APPROVAL\",\n        \"originatingApplicationId\": \"GTWAY\",\n        \"paymentOriginationMethod\": \"FREEFORM\",\n        \"cutOffTime\": \"2018-02-15T22:30:00.000Z\",\n        \"paymentAudit\": {\n            \"lastModifiedBy\": \"CORPUAT_SYS\",\n            \"lastModifiedTimestamp\": \"2018-02-09T12:21:17.869Z\",\n            \"createdBy\": \"CORPUAT_SYS\",\n            \"createdTimestamp\": \"2018-02-09T12:21:17.869Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Check wire status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/wire-payments/CORPUAT_394530",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"wire-payments",
+										"CORPUAT_394530"
+									],
+									"query": [
+										{
+											"key": "detail",
+											"value": "yes",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "748"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 11:55:24 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"payment\": {\n        \"paymentType\": \"BOOK\",\n        \"valueDate\": \"2017-07-14\",\n        \"paymentAmount\": 600,\n        \"paymentCurrency\": \"USD\",\n        \"paymentIndicator\": \"CREDIT\",\n        \"creditCurrency\": \"USD\",\n        \"duplicateCheckFlag\": false\n    },\n    \"paymentProcessingInformation\": {\n        \"status\": \"SUCCESSFUL\",\n        \"paymentId\": \"CORPUAT_394530\",\n        \"appId\": \"CEO_WIRES_APPROVAL\",\n        \"originatingApplicationId\": \"GTWAY\",\n        \"paymentOriginationMethod\": \"TEMPLATED\",\n        \"cutOffTime\": \"2017-07-14T21:30:00.000Z\",\n        \"templateName\": \"0020_21DD\",\n        \"paymentAudit\": {\n            \"lastModifiedBy\": \"CORPUAT_SYS\",\n            \"lastModifiedTimestamp\": \"2017-07-11T23:23:54.013Z\",\n            \"createdBy\": \"CORPUAT_SYS\",\n            \"createdTimestamp\": \"2017-07-11T23:23:54.013Z\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TOKEN",
+			"item": [
+				{
+					"name": "Generate Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/token?grantType=client_credentials&scope=ACH-ALL",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grantType",
+									"value": "client_credentials"
+								},
+								{
+									"key": "scope",
+									"value": "ACH-ALL"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Generate Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/token?grantType=client_credentials&scope=ACH-ALL",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"token"
+									],
+									"query": [
+										{
+											"key": "grantType",
+											"value": "client_credentials"
+										},
+										{
+											"key": "scope",
+											"value": "ACH-ALL"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 24 Aug 2023 15:10:19 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"t8AobHhdPszfZofKtQU5TLdacG8M\",\n    \"scope\": \"ACH-ALL\",\n    \"tokenType\": \"Bearer\",\n    \"expiresIn\": 86400\n}"
+						}
+					]
+				},
+				{
+					"name": "Revoke Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "{{x-correlation-id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "iABm3zYF8cBmuVMiOCIAvnxlm1GK",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/revoke",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"revoke"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Revoke Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client_id",
+										"value": "76db08799a89424e9cdac722944c739d",
+										"type": "text"
+									},
+									{
+										"key": "client_secret",
+										"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+										"type": "text"
+									},
+									{
+										"key": "x-correlation-id",
+										"value": "a54aee33-c6c6-4467-be25-efd1db7a8b76",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "token",
+											"value": "sh8Y8ECjP0sZdhRGN5l94Jhm5VIX",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/revoke",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"revoke"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 16:24:47 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The token invalidated successfully.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health-check",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{client_secret}}",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "{{x-correlation-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/health-check",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"health-check"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "health-check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "76db08799a89424e9cdac722944c739d",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/health-check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"health-check"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "272"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Aug 2023 16:15:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response\": {\n        \"application\": \"payment-acc-api\",\n        \"buildversion\": \"1.0.0\",\n        \"buildTimestamp\": \"22/08/2023 21:45:21\",\n        \"status\": \"UP\",\n        \"env\": \"local\",\n        \"systems\": [\n            {\n                \"name\": \"Wells Fargo API\",\n                \"status\": \"UP\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "health-check UP",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "76db08799a89424e9cdac722944c739d",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/health-check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"health-check"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "272"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Aug 2023 16:32:51 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response\": {\n        \"application\": \"payment-acc-api\",\n        \"buildversion\": \"1.0.0\",\n        \"buildTimestamp\": \"22/08/2023 22:02:70\",\n        \"status\": \"UP\",\n        \"env\": \"local\",\n        \"systems\": [\n            {\n                \"name\": \"Wells Fargo API\",\n                \"status\": \"UP\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "health-check DOWN",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "76db08799a89424e9cdac722944c739d",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/health-check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"health-check"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "274"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Aug 2023 16:34:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response\": {\n        \"application\": \"payment-acc-api\",\n        \"buildversion\": \"1.0.0\",\n        \"buildTimestamp\": \"22/08/2023 22:04:82\",\n        \"status\": \"UP\",\n        \"env\": \"local\",\n        \"systems\": [\n            {\n                \"name\": \"Wells Fargo API\",\n                \"status\": \"DOWN\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{client_secret}}",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "{{x-correlation-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/ping",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ping",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "76db08799a89424e9cdac722944c739d",
+								"type": "text"
+							},
+							{
+								"key": "client_secret",
+								"value": "C52a343cbbE84DfC87e2Da9f545B03FD",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "a54aee33-c6c6-4467-be25-efd1db7a8b761254124004264",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Aug 2023 16:15:34 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"UP\",\n    \"api\": \"payment-acc-api\",\n    \"env\": \"local\",\n    \"timestamp\": \"22/08/2023 21:45:03\"\n}"
+				}
+			]
+		}
+	]
+}

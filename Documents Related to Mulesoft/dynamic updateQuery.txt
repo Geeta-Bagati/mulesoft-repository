@@ -1,0 +1,20 @@
+updateQuery
+
+
+%dw 2.0
+output application/json
+
+fun isStringType(value : String | Null) = (typeOf(value) contains "String")
+
+var d= vars.updatePayload
+var query = "Update Customer set " ++ 
+(if(isStringType(d.firstName) and (sizeOf(d)>2)) "FirstName= :firstName," else if (isStringType(d.firstName)) "FirstName= :firstName" else "")
+++
+(if(isStringType(d.middelInitial) and (sizeOf(d)>2)) "MiddelInitial= :middelInitial," else if (isStringType(d.middelInitial)) "MiddelInitial= :middelInitial" else "")
+++
+(if(isStringType(d.lastName) and (sizeOf(d)>2)) "LastName= :lastName," else if (isStringType(d.lastName)) "LastName= :lastName" else "")
+++
+(if(isStringType(d.dateOfBirth) and (sizeOf(d)>2)) "DateOfBirth= :dateOfBirth" else if (isStringType(d.dateOfBirth)) "DateOfBirth= :dateOfBirth" else "")
+
+---
+if(query[-1] contains ",") query[0 to -2] else query
